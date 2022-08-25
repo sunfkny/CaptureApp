@@ -69,7 +69,7 @@
             this.textBox_matchStr.Name = "textBox_matchStr";
             this.textBox_matchStr.Size = new System.Drawing.Size(529, 21);
             this.textBox_matchStr.TabIndex = 2;
-            this.textBox_matchStr.Text = "mihoyo.com/event/gacha_info/api/getGachaLog";
+            this.textBox_matchStr.Text = "/event/gacha_info/api/getGachaLog";
             // 
             // label1
             // 
