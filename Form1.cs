@@ -28,21 +28,23 @@ namespace CaptureApp
 
         public async Task OnRequest(object sender, SessionEventArgs e)
         {
-
-            var method = e.HttpClient.Request.Method.ToUpper();
-            if (method == "GET")
+            await Task.Run(() =>
             {
-                var matchStr = textBox_matchStr.Text;
-                var requestUrl = e.HttpClient.Request.Url;
-                Console.WriteLine(requestUrl);
-                if (requestUrl.Contains(matchStr))
+                var method = e.HttpClient.Request.Method.ToUpper();
+                if (method == "GET")
                 {
-                    stopProxyServer();
-                    textBox_result.Text = requestUrl;
-                    url = requestUrl;
-                }
+                    var matchStr = textBox_matchStr.Text;
+                    var requestUrl = e.HttpClient.Request.Url;
+                    Console.WriteLine(requestUrl);
+                    if (requestUrl.Contains(matchStr))
+                    {
+                        stopProxyServer();
+                        textBox_result.Text = requestUrl;
+                        url = requestUrl;
+                    }
 
-            }
+                }
+            });
 
         }
 
